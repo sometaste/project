@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="cca.css" rel="stylesheet">
+    <title>Sign Up Page</title>
+    <style>
+      #backgroundvid{
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;  
+      object-fit: cover; 
+    }
+        body {
+            background-color: green;
+        }
+        form {
+            background-color: rgb(233, 233, 233);
+            width: 35%;
+            margin: auto;
+            padding: 110px;
+            margin-top:20px;
+            margin-bottom:20px;
+            border-radius:5px;
+        }
+        #submit {
+            width: 100%;
+            padding: 15px;
+            background-color: rgb(0, 48, 0);
+            color: white;
+            border-radius: 5px;
+        }
+        .ans {
+            width: 100%;
+        }
+        #submit:hover {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="main.html">
+      <img src="logo.png" alt="ODAC Logo" style="height: 30px; width: auto;" class="me-2" />
+      Outdoor adventure club
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="testimony.html">testimonies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="achievements.html">Achievements</a>
+        </li>
+      
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <video src="signuppagevideo.mp4"id='backgroundvid' autoplay loop muted></video>
+    <form action="main.html" method="post" id="form1">
+        <fieldset>
+            <legend>Sign up form</legend>
+            Enter name:<br />
+            <input type="text" id="name" name="name" class="ans" required />
+            <br />
+            Enter age:<br />
+            <input type="number" max="120" min="1" id="age" name="age" class="ans" required />
+            <br />
+            Enter email:<br />
+            <input type="email" id="email" name="email" class="ans" required />
+            <br />
+            Enter occupation:<br />
+            <input type="text" id="job" name="job" class="ans" required />
+            <br />
+            Enter polytechnic (optional):<br />
+            <select id="poly" class="ans" name="school">
+                <option value="NoPoly">Not from a Polytechnic</option>
+                <option value="Singapore Polytechnic">Singapore Polytechnic</option>
+                <option value="Temasek Polytechnic">Temasek Polytechnic</option>
+                <option value="Ngee Ann Polytechnic">Ngee Ann Polytechnic</option>
+                <option value="Nanyang Polytechnic">Nanyang Polytechnic</option>
+                <option value="Republic Polytechnic">Republic Polytechnic</option>
+            </select>
+            <br /><br />
+            <input type="submit" id="submit" name="submit" />
+        </fieldset>
+    </form>
+    <script>
+        var form = document.getElementById('form1');
+        form.onsubmit = function(event) {
+            event.preventDefault();
+            var name1 = document.getElementById('name').value;
+            var email1 = document.getElementById('email').value;
+            var poly=document.getElementById('poly').value;
+          if (poly !== 'NoPoly') {
+  alert('Thank you ' + name1 + ' from ' + poly + ', you will receive an email in ' + email1 + ' soon about the details');
+} else {
+  alert('Thank you ' + name1 + ', you will receive an email in ' + email1 + ' soon about the details');
+}
+            window.location.href = 'main.html';
+        };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
